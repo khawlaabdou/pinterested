@@ -16,7 +16,12 @@
     <%= form.text_field :description, class: 'form-control' %>
   </div>
 
+  <div class="from_group">
+  <%= form.label :image %>
+    <%= form.file_field :image, class: 'form-control' %>
+    </div>
+
   <div class="actions">
-    <%= form.submit 'Submit', class: 'btn btn-primary'  %>
+    <%= form.submit 'Submit', class: 'from-control'  %>
   </div>
 <% end %>

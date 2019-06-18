@@ -1,6 +1,9 @@
 <p id="notice"><%= notice %></p>
 
 <p>
+  <% if @pin.image.attached? %>
+    <image src="<%=(url_for(@pin.image))%>" , width= '300px' , height = '300px'>
+  <% end %></br>
   <strong>Description:</strong>
   <%= @pin.description %>
 </p>

@@ -5,6 +5,7 @@
 <table>
   <thead>
     <tr>
+      <th>Image</th>
       <th>Description</th>
       <th colspan="3"></th>
     </tr>
@@ -13,6 +14,10 @@
   <tbody>
     <% @pins.each do |pin| %>
       <tr>
+        <td> <% if pin.image.attached? %>
+                 <image src="<%=(url_for(pin.image))%>" , width= '100px' , height = '100px'>
+               <% end %>
+         </td>
         <td><%= pin.description %></td>
         <td><%= link_to 'Show', pin %></td>
         <td><%= link_to 'Edit', edit_pin_path(pin) %></td>
