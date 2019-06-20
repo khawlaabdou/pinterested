@@ -6,10 +6,10 @@
       <% if pin.image.attached? %>
         <image src="<%=(url_for(pin.image))%>" , width= '300px' , height = '300px'></br>
       <% end %>
-      <%= pin.description %><br/>
-      <%= pin.user.name if pin.user %><br/>
+      <b><%= pin.description %></b><br/>
+      <%= pin.user.email if pin.user  %><br/>
       <%= link_to 'Show', pin %>
-      <% if pin.user != current_user %>
+      <% if pin.user == current_user %>
          <%= link_to 'Edit', edit_pin_path(pin) %>
          <%= link_to 'Destroy', pin, method: :delete, data: { confirm: 'Are you sure?' } %>
       <% end %>     

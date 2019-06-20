@@ -28,6 +28,7 @@ class PinsController < ApplicationController
   # POST /pins.json
   def create
     @pin = Pin.new(pin_params)
+    @pin.update(user_id:current_user.id)
 
     respond_to do |format|
       if @pin.save
